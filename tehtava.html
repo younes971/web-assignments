@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Kilpailuautot</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      
+    }
+
+    nav {
+      background-color: black;
+      overflow: hidden;
+      padding: 10px 10px;
+    }
+
+    h1 {
+      color: white;
+      margin: 0;
+      text-align: center;
+      
+    }
+
+    .hero {
+      background: lightblue url("background.jpg") no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
+    }
+    .about {
+      padding: 20px;
+      overflow: auto; 
+      background: white;
+    }
+
+    .about-text {
+      float: left;
+      width: 65%;
+    }
+
+    .about-side {
+      float: right;
+      width: 30%;
+      background: white;
+      padding: 10px;
+    }
+
+    .image-section {
+      position: relative;
+      height: 100px;
+      background: white;
+    }
+
+    .car-image {
+      position: absolute;
+      top: -310px; 
+      left: 80%;
+      width: 200px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Kilpailuautot</h1>
+    <ul>
+      <li><a href="#">Etusivu</a></li>
+      <li><a href="#">Lisää meistä</a></li>
+      <li><a href="#">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>Tervetuloa nopeuden maailmaan!</h2>
+  </section>
+
+  <section class="about">
+    <h2>Lisää meistä</h2>
+    <div class="about-text">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, odio in aut ipsam officia delectus quaerat repudiandae aspernatur ipsa et facere repellendus quos mollitia corrupti maiores aliquid obcaecati fuga? Maxime?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex autem quidem vel quia repellat vitae vero quibusdam ut, exercitationem facilis aperiam aut odit saepe quaerat dolore fuga nostrum natus? Hic?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis excepturi dolorum autem quisquam! Optio molestias quibusdam vel necessitatibus blanditiis ut quia omnis non nostrum provident quod earum, veritatis hic deserunt?
+      </p>
+    </div>
+  </section>
+
+  <section class="image-section">
+    <img src="img.jpg" alt="Kilpa-auto" class="car-image">
+  </section>
+
+  <footer>Copyright</footer>
+
+</body>
+</html>
