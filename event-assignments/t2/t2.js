@@ -770,23 +770,53 @@ const restaurants = [
   },
 ];
 
-const modal = document.querySelector('#modal');
-function highlight(evt) {
-document.querySelector('.highlight')?.classList.remove('highlight');
-evt.currentTarget.classList.add('highlight');
+// your code here
+const table = document.querySelector('table');
+const dialog = document.querySelector('dialog');
+
+const sortedRestaurants = restaurants.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
+function renderRestaurants() {
+  table.querySelectorAll('tr:not(:first-child)').forEach(row => row.remove());
+
+  sortedRestaurants.forEach((restaurant, index) => {
+    const tr = document.createElement('tr');
+
+    const nameTd = document.createElement('td');
+    nameTd.textContent = restaurant.name;
+
+    const addressTd = document.createElement('td');
+    addressTd.textContent = restaurant.address;
+
+    tr.appendChild(nameTd);
+    tr.appendChild(addressTd);
+
+    tr.addEventListener('click', () => {
+      table
+        .querySelectorAll('tr')
+        .forEach(r => r.classList.remove('highlight'));
+      tr.classList.add('highlight');
+
+      dialog.innerHTML = `
+        <h2>${restaurant.name}</h2>
+        <p><strong>Address:</strong> ${restaurant.address}</p>
+        <p><strong>Postal Code:</strong> ${restaurant.postalCode}</p>
+        <p><strong>City:</strong> ${restaurant.city}</p>
+        <p><strong>Phone:</strong> ${restaurant.phone}</p>
+        <p><strong>Company:</strong> ${restaurant.company}</p>
+        <button id="closeBtn">Close</button>
+      `;
+      dialog.showModal();
+
+      document.getElementById('closeBtn').addEventListener('click', () => {
+        dialog.close();
+      });
+    });
+
+    table.appendChild(tr);
+  });
 }
 
-function openModal() {
-modal.showModal();
-const html =
-<h3>Nimi</h3>
-<address>
-  Osoite <br>
-  postinumero kaupunki <br>
-  puhelin<br>
-  Firma
-</address>
-;
-modal-insert.Adjacenthtml('beforeend',html);
-}
-
+renderRestaurants();
